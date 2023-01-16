@@ -25,7 +25,7 @@ MEDIA_DIR = Path.joinpath(BASE_DIR, "media")
 SECRET_KEY = "django-insecure-yp6w!h6dg7m=!wc72b2wkqa3zf+%flcb1#%8gco@dhtd6ri5z7"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["quasarhub.pythonanywhere.com"]
 
