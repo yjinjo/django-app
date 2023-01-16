@@ -1,0 +1,36 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django Page</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+<h1>Hi welcome to Django</h1>
+<h2>Here are your access records:</h2>
+
+<div class="djangtwo">
+    {% if access_records %}
+    <table>
+        <thead>
+        <th>Site Name</th>
+        <th>Date Access</th>
+        </thead>
+
+        {% for acc in access_records %}
+        <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>NO ACCESS RECORDS FOUND!</p>
+    {% endif %}
+</div>
+</body>
+</html>
