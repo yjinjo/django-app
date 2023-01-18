@@ -125,5 +125,6 @@ fabric.properties
 venv/
 *.pyc
 .idea/**
+migrations/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,pycharm+all

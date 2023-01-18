@@ -1,8 +1,6 @@
-from datetime import timezone
-
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from models import Post, Comment
+from blog.models import Post, Comment
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -15,7 +13,7 @@ from django.views.generic import (
     DeleteView,
 )
 
-from forms import PostForm, CommentForm
+from blog.forms import PostForm, CommentForm
 
 
 # Create your views here.
@@ -62,7 +60,7 @@ class DraftListView(LoginRequiredMixin, ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.object.filter(published_date__isnull=True).order_by("created_date")
+        return Post.objects.filter(published_date__isnull=True).order_by("created_date")
 
 
 @login_required
